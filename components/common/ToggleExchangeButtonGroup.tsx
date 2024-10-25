@@ -3,7 +3,7 @@ import { MouseEvent, useCallback, useEffect } from "react";
 import { ExchangeNamesEnum } from "../../constants/enums";
 import { selectExchange, setExchange } from "../../features/symbolChartSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { localSaved } from "../../utils/localSaved";
+import { localSaved } from "../../utils/localSaved.utils";
 import { CustomToggleButtonGroup } from "../shared/CustomToggleButtonGroup";
 
 export const ToggleExchangeButtonGroup = () => {
