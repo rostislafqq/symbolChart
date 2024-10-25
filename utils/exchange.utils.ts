@@ -1,4 +1,4 @@
-import { TradeSymbolStatusEnum } from "../constants/enums";
+import { TradeSymbolStatusEnum } from "../constants/exchangeEnums";
 import { ExchangeInformation } from "../types/exchange.types";
 
 export const filterExchangeTradeSymbolList = (

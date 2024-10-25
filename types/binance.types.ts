@@ -1,4 +1,7 @@
-import { RateLimitersEnum, RateLimitIntervalsEnum } from "../constants/enums";
+import {
+  RateLimitersEnum,
+  RateLimitIntervalsEnum,
+} from "../constants/exchangeEnums";
 
 export interface BinanceRateLimit {
   rateLimitType: RateLimitersEnum;

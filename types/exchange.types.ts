@@ -3,7 +3,7 @@ import {
   OrderTypesEnum,
   TradePermissonEnum,
   TradeSymbolStatusEnum,
-} from "../constants/enums";
+} from "../constants/exchangeEnums";
 import { BinanceRateLimit } from "./binance.types";
 import { EntityWithSymbol } from "./common.types";
 
