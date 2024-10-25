@@ -19,7 +19,7 @@ const getSavedParsedItem = <T>(item: string): Nullable<T> => {
 export const localSaved: LocalSaved = {
   savedExchange: {
     set: (value: ExchangeNamesEnum) =>
-      localStorage.setItem("savedExchange", value),
+      localStorage.setItem("savedExchange", JSON.stringify(value)),
     get: () => getSavedParsedItem<ExchangeNamesEnum>("savedExchange"),
     remove: () => localStorage.removeItem("savedExchange"),
   },

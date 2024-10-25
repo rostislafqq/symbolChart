@@ -8,7 +8,7 @@ import { MouseEvent, useMemo } from "react";
 interface CustomToggleButtonGroupProps extends ToggleButtonGroupProps {
   value: string;
   buttonLabelList: string[];
-  onChange: (event: MouseEvent<HTMLElement>, value: string) => void;
+  onChange: (event: MouseEvent<HTMLElement>, value: Nullable<string>) => void;
   buttonWidth?: string;
 }
 

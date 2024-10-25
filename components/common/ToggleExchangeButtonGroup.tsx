@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { MouseEvent, useCallback, useEffect } from "react";
 
 import { ExchangeNamesEnum } from "../../constants/enums";
 import { selectExchange, setExchange } from "../../features/symbolChartSlice";
@@ -11,18 +11,32 @@ export const ToggleExchangeButtonGroup = () => {
 
   const dispatch = useAppDispatch();
 
+  const handleSetExchange = useCallback(
+    (exchange: ExchangeNamesEnum) => {
+      dispatch(setExchange(exchange));
+    },
+    [dispatch]
+  );
+
   const onChangeExchange = (
     _: MouseEvent<HTMLElement>,
-    buttonValue: string
+    buttonValue: Nullable<string>
   ) => {
     if (buttonValue) {
-      const exchangeName = buttonValue as ExchangeNamesEnum;
+      const exchange = buttonValue as ExchangeNamesEnum;
 
-      dispatch(setExchange(exchangeName));
-
-      localSaved.savedExchange.set(exchangeName);
+      handleSetExchange(exchange);
+      localSaved.savedExchange.set(exchange);
     }
   };
+
+  useEffect(() => {
+    const savedExchange = localSaved.savedExchange.get();
+
+    if (savedExchange) {
+      handleSetExchange(savedExchange);
+    }
+  }, [handleSetExchange]);
 
   return (
     <CustomToggleButtonGroup
