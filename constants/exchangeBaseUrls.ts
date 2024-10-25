@@ -26,7 +26,6 @@ export const binanceBaseUrlsEntities: ExchangeBaseUrlsEntities = {
 
 export const binanceFuturesUrlFragment = "fapi";
 export const binanceSpotUrlFragment = "api/v3";
-export const debankUserUrlFragment = "v1/user";
 
 export const bybitBaseUrlsEntities: ExchangeBaseUrlsEntities = {
   api: {
