@@ -1,16 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
-import cartReducer from "./cartSlice";
-import { goodsApiSlice } from "./catalogApiSlice";
+import symbolChartReducer from "./symbolChartSlice";
 
 export const store = configureStore({
   reducer: {
-    cartSlice: cartReducer,
-    [goodsApiSlice.reducerPath]: goodsApiSlice.reducer,
+    symbolChart: symbolChartReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(goodsApiSlice.middleware),
 });
 
 setupListeners(store.dispatch);
