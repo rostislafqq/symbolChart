@@ -1,15 +1,20 @@
 import { Grid } from "@mui/material";
 
-import { useGetBinanceSpotExchangeInfoQuery } from "../../features/exchangeApiInjects/binanceApiInjectsSlice";
 import { ToggleExchangeButtonGroup } from "../common/ToggleExchangeButtonGroup";
+import { TradingSymbolSelector } from "../common/TradingSymbolSelector";
 
 export const SymbolChart = () => {
-  useGetBinanceSpotExchangeInfoQuery();
-
   return (
     <Grid container>
       <Grid item>
-        <ToggleExchangeButtonGroup />
+        <Grid flexDirection="column" spacing={1} container>
+          <Grid item>
+            <ToggleExchangeButtonGroup />
+          </Grid>
+          <Grid width="320px" item>
+            <TradingSymbolSelector />
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
